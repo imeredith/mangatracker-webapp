@@ -1,0 +1,322 @@
+body{
+	font-family: 'Ubuntu', sans-serif;
+	color:#444;
+	background: rgb(242,154,14); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(242,154,14,1) 0%, rgba(255,103,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,154,14,1)), color-stop(100%,rgba(255,103,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(242,154,14,1) 0%,rgba(255,103,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(242,154,14,1) 0%,rgba(255,103,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(242,154,14,1) 0%,rgba(255,103,15,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(242,154,14,1) 0%,rgba(255,103,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f29a0e', endColorstr='#ff670f',GradientType=0 ); /* IE6-9 */
+	background-repeat: no-repeat;
+	background-color:rgba(255,103,15,1);
+	
+	background: url("/public/images/tex1b.png") rgba(255, 103, 15, 1);
+}
+h1{
+	margin-bottom:5px;
+	margin-top:5px;
+}
+.sleek_form{
+	min-width:300px;
+	margin:100px auto;
+
+}
+
+.sleek_form label, form label{
+	width:100%;
+	margin:0 5px;
+	font-size:14px; 
+	color:#555;
+	font-weight: 500;
+}
+
+.error{
+	font-size:12px;
+	color:#FF5500;
+	margin:0 0px 0 0;
+	display:inline;
+	font-weight: 600;
+}
+
+.success{
+	font-size:12px;
+	color:DodgerBlue;
+	margin:0 0px 0 0;
+	display:inline;
+	font-weight: 600;
+}
+
+.sleek_form input[type='text'], form input[type='text'],.sleek_form input[type='password'],form input[type='password']{
+	border: 1px solid white;
+	font-size: 15px;
+	padding: 2px 0;
+	width: 100%;
+	box-shadow:1px 1px 2px grey inset;
+	font-family: 'Ubuntu', sans-serif;
+	color:#444;
+}
+
+#login_or_register{
+
+}
+#login_container ,#register_container{
+	margin:0 auto;
+	padding:50px 40px;
+	border-radius:2px;
+	box-shadow:0px 0px 9px grey;
+	border:2px solid white;
+	background: rgb(242,249,254); /* Old browsers */
+	background: rgb(249,252,247); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(249,252,247,1) 0%, rgba(223,226,220,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,252,247,1)), color-stop(100%,rgba(223,226,220,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(249,252,247,1) 0%,rgba(223,226,220,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(249,252,247,1) 0%,rgba(223,226,220,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(249,252,247,1) 0%,rgba(223,226,220,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(249,252,247,1) 0%,rgba(223,226,220,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#dfe2dc',GradientType=0 ); /* IE6-9 */
+}
+
+#register_container{
+		width:430px;	
+}
+
+#login_container{
+		width:230px;
+}
+
+.form_link{
+	text-decoration: underline;
+	cursor:pointer;
+	display:inline-block;
+	padding:2px;
+	
+	
+}
+
+#goto_register, #goto_login{
+	font-size: 12px;
+	position: relative;
+	top:0px;
+	width:100%;
+	text-align: center;
+}
+
+.input_error{
+	background-image: url("/public/images/invalid.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.input_valid{
+	background-image: url("/public/images/valid.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.issue_name{
+	display:none;
+	line-height: 37px;
+margin-left: 0px;
+border-bottom: 1px solid #CCC;
+margin-right:0px;
+background-color: rgba(255, 255, 255, 0.5);
+}
+
+.issue_name label{
+	margin-left:60px
+}
+
+.manga_name{
+	line-height: 39px;
+	background-color:white;
+	border-bottom:1px solid #ddd;
+	padding-left:10px;
+
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	cursor:pointer;
+}
+
+.manga_name.focused{
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: 300;
+	position: relative;
+	background:url("/public/images/tex1b.png");
+	font-size:17px;
+}
+
+.manga_name:last-child{
+		border-bottom:1px solid #666;
+		margin-bottom:100px;
+		
+}
+.scroller-contents-holder{
+	box-shadow:0 0 5px black;
+}
+#manga_holder_scroller{
+	position: absolute;
+	top: 70px;
+	bottom: 0px;
+	left: 0;
+	float: left;
+	overflow: hidden;
+	overflow-x: none;
+	overflow-y: scroll;
+	width: 260px;
+	background: url("/public/images/tex1w.png") white;
+	background-color: white;
+	border-top: 11px solid aliceBlue;
+}
+.options{
+	width:81px;
+	text-align: center;
+	vertical-align: middle;
+	height:30px;
+	line-height: 30px;
+	background-color:#FF0040;
+	display:inline-block;
+	cursor:pointer;
+	
+	
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 56%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(56%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 56%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 56%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 56%,rgba(234,234,234,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,1) 56%,rgba(234,234,234,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+}
+.options.selected{
+	background:white;
+	border-radius:5px;
+	cursor:default;
+}
+#manga_holder{
+	border-radius: 0 10px 0 0;
+	position: fixed;
+	top: 35px;
+	bottom:0px;
+	left:0;
+	width:255px;
+	padding: 9px 5px 0;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+#chapter_holder {
+	position: fixed;
+	left: 270px;
+	border: 10px solid white;
+	bottom: 10px;
+	top: 105px;
+	right: 10px;
+	background: url("/public/images/tex1w.png");
+	background-color: white;
+	z-index: 3333;
+	overflow-y: scroll;
+	border-radius: 7px;
+	box-shadow: 0px 0px 4px grey inset;
+	border-right: 0;
+	border-image: initial;
+}
+.pane{
+	float:left;
+	position: absolute;
+	top: 50px;
+	bottom:0px;
+	left:0;
+}
+
+#sort_search {
+	line-height: 22px;
+	font-size: 17px;
+	border: 0px;
+	padding: 0 4px;
+	border-radius: 2px;
+
+	vertical-align: top;
+	margin-bottom: 3px;
+	width:243px;
+}
+
+.quick_bar{
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 25px;
+    left: 0;
+    padding: 0 12px 0 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+a {
+    color:DodgerBlue;
+}
+.stat-window{
+	margin:100px 40px 40px;
+	height:100%;
+	background-color:white;
+}
+
+
+.container_shape {
+	border: 10px solid white;
+	position: relative;
+	width: 1024px;
+	margin: 105px auto;
+	padding:0px;
+
+
+	background: url("/public/images/tex1w.png");
+	background-color: white;
+	z-index: 3333;
+	border-radius: 7px;
+	border-image: initial;
+}
+.c-ap{
+	position: relative;
+	float:left;
+	width:1014px;
+	margin:5px;
+}
+
+.c4-3p{
+	position: relative;
+	float:left;
+	width:758px;
+	margin:5px;
+}
+.c4-2p{
+	position: relative;
+	float:left;
+	width:502px;
+	margin:5px;
+}
+.c4-1p{
+	position: relative;
+	float:left;
+	width:246px;
+	margin:5px;
+}
+
+.c3-2p{
+	position: relative;
+	float:left;
+	width:672px;
+	margin:5px;
+}
+.c3-1p{
+	position: relative;
+	float:left;
+	width:331px;
+	margin:5px;
+}
+

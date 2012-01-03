@@ -1,0 +1,130 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div style="clear:both"></div>
+<div class='pane'>
+
+	<div id="manga_holder">
+		<input type="text" id="sort_search"/ placeholder="Search name..."><br/>
+		<div class="options " id="sort_a-z" >A-Z</div>
+		<div class="options " id="sort_added" >added</div>
+		<div class="options selected" id="sort_updated">updated</div>
+		<div id="manga_holder_scroller">
+			<div class="scroller-contents-holder">
+				#{list items:mangas, as:'manga'}
+					<div data-manga-id="${manga.id}"    data-name='${manga.name}'    data-added='${manga.added}'  data-updated='${manga.updated}'   class="manga_name" id='manga-${manga.id}'>
+						<span>${manga.name}</span>
+					</div>
+				#{/list}
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="chapter_holder">
+		<div id="chapter-scroller">
+		
+			#{list items:chapters, as:'chapter'}
+				<div data-chapter-id="${chapter.id}" class="issue_name for-manga-${chapter.manga_id}" id='manga-${chapter.manga_id}-chapter-${chapter.id}'>
+					
+					<label>Chapter:</label>
+					<a href="${chapter.url}" >
+						<span>${chapter.issue}</span>
+					</a> 
+					<label>Host:</label>
+					<a href="${chapter.host}" >
+						<span>${chapter.host}</span>
+					</a>
+					
+				</div>
+			#{/list}
+		</div>
+	</div>
+	<div style="clear:both"></div>
+</div>
+<div style="clear:both"></div>
+
+<script type="text/javascript" >
+(function($){
+
+$(".manga_name").bind("click", function(){
+	var id = $(this).attr("data-manga-id"); 
+	$(".issue_name").hide();
+	$(".for-manga-"+id).show();
+	
+		$(".manga_name").removeClass("focused");
+	$(this).addClass("focused");
+});
+
+$("#sort_a-z").bind("click", function(){
+	$(".options.selected").removeClass("selected");
+	$(this).addClass("selected");
+	var mangaItems = $(".manga_name");
+	mangaItems.sort(function(a, b) {
+		var compA = $(a).attr("data-name").toUpperCase();
+		var compB = $(b).attr("data-name").toUpperCase();
+		return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+	})
+	$("#manga_holder_scroller").append(mangaItems);
+});
+
+$("#sort_updated").bind("click", function(){
+	$(".options.selected").removeClass("selected");
+	$(this).addClass("selected");
+	var mangaItems = $(".manga_name");
+	mangaItems.sort(function(a, b) {
+		var compA = $(a).attr("data-updated");
+		var compB = $(b).attr("data-updated");
+		return (compA < compB) ? 1 : (compA > compB) ? -1 : 0;
+	})
+	$("#manga_holder_scroller").append(mangaItems);
+});
+
+$("#sort_added").live("click", function(){
+	$(".options.selected").removeClass("selected");
+	$(this).addClass("selected");
+	var mangaItems = $(".manga_name");
+	mangaItems.sort(function(a, b) {
+		var compA = $(a).attr("data-added");
+		var compB = $(b).attr("data-added");
+		return (compA < compB) ? 1 : (compA > compB) ? -1 : 0;
+	})
+	$("#manga_holder_scroller").append(mangaItems);
+});
+
+$(".options.selected").trigger("click");
+
+$("#sort_search").live("keyup", function(){
+	var mangaItems = $(".manga_name");
+	var term = $(this).val().trim().toLowerCase();
+
+	mangaItems.each(function(a, b) {
+		var text_body = $(b).attr("data-name").trim().toLowerCase();
+		
+		if(text_body.indexOf(term) != -1){
+			$(b).show();
+		} else {
+			$(b).hide();
+		}
+	})
+	$("#manga_holder_scroller").append(mangaItems);
+});
+
+})(jQuery);
+
+
+
+
+
+/*
+	$(".manga_name").each(function(index, element){
+		$.post('@{get_chapter_list()}', jQuery.param( { mid : $(element).attr("data-manga-id") } ), function(chapters){
+			for(var i = 0;i < chapters.length; i++){
+				var chapter = chapters[i];
+				$("<div class='sad'>   " + chapter.issue + " </div>").appendTo($("#manga-"+chapter.manga_id));
+			}
+		},"json");
+	});
+*/
+
+</script>

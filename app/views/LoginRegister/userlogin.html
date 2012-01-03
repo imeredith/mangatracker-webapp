@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<p>
+	<div class="sleek_form">
+		<div id="login_container">
+			#{form @LoginRegister.login()}
+				#{ifError 'failed'}
+	   				<h1>Oops...</h1>
+				  	<span class="error">#{error 'failed' /}</span>
+				#{/ifError}
+				<div>
+					<label for="login_name" >Login name</label><span class="error">#{error 'name' /}</span>
+					<input id="login_name" name="name" type='text' value="${flash.name}" #{ifError 'name'} class='input_error' #{/ifError}/>
+				</div>
+				
+				<div>
+					<label for="login_password" >Password</label><span class="error">#{error 'password' /}</span>
+					<input id="Login_password" name="password" type='password' value="${flash.password}" #{ifError 'password'}class='input_error'#{/ifError}/>
+				</div>			
+				
+
+				
+				
+
+				<div><input class="form_button" id="submit_login" type="submit" value="Login" /></div>
+				<div><span class="form_link"  id="goto_register"> #{a @LoginRegister.userregister() }Create an account. #{/a}</span></div>
+			#{/form}
+		</div>	
+	</div>
+</p>

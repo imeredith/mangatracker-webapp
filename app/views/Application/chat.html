@@ -1,0 +1,39 @@
+<div class="stat-window">
+
+	<div id="posts">
+
+	</div>
+	<input id="body" type="text" />
+</div>
+
+<script type="text/javascript" src="/getpost/0"></script>
+
+<script type="text/javascript" >
+var me = ${logged_in?.id};
+var upto = 0;
+
+$("#body").bind("keyup",function(e){
+	if(e.which == 13){
+		$.post('@{set_post()}', jQuery.param( { "post.body" : $(this).val() } ), function(hello){ 
+			renderPost(hello);
+			upto = hello.id;
+		},"json");
+	}
+});
+
+function renderPost(post){
+	$("#posts").append("<div class='post " + (post.to_ids.indexOf(me) != -1? "to_me" : "")  + "' > " + post.body + "</div>");
+}
+var upto = 0;
+setInterval(function(){
+	$.post('/getpost/' + upto, function(posts){ 
+		for(a = 0; a < posts.length; a++){
+			renderPost(posts[a]);
+			if(posts[a].id > upto){
+				upto = posts[a].id;
+			}
+		}
+	},"json");
+}, 2000);
+	
+</script>

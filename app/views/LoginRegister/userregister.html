@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<p>
+	<div class="sleek_form">
+		<div id="register_container">
+			#{form @LoginRegister.register()}
+			
+				#{ifErrors}
+	   				<h1>Oops...</h1>
+				
+				       <div><span class="error">Validation failed!</span></div>
+				
+				#{/ifErrors}
+				
+		
+				<div class="input_row">
+					<label for="register_name" >Login name</label><span class="error">#{error 'user.name' /}</span>
+					<input id="register_name" name="user.name" type='text' #{ifError 'user.name'} class='input_error' #{/ifError} value="${flash['user.name']}"/>
+					
+				</div>
+				<div class="input_row">
+					<label for="register_email" >Email</label><span class="error">#{error 'user.email' /}</span>
+					<input id="register_email" name="user.email" type='text' #{ifError 'user.email'} class='input_error' #{/ifError} value="${flash['user.email']}"/ >
+					
+				</div>
+				<div class="input_row">
+					<label for="register_password" >Password</label><span class="error">#{error 'user.password' /}</span>
+					<input id="register_password" name="user.password" type='password' #{ifError 'user.password'} class='input_error' #{/ifError} value="${flash['user.password']}"/>
+					
+				</div>
+				<div class="input_row">
+					<label for="retype_register_password" >Confirm Password</label><span class="error">#{error 'confirm' /}</span>
+					<input id="retype_register_password" name="confirm" type='password' #{ifError 'confirm'} class='input_error' #{/ifError} value="${flash.confirm}"/>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+
+				<div><input class="form_button" id="submit_login" type="submit" value="Register" /></div>
+				<div><span class="form_link"  id="goto_register"> #{a @LoginRegister.userlogin() }Login. #{/a}</span></div>
+			#{/form}
+		</div>	
+	</div>
+</p>

@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /	                                    Application.index
+GET     /mymanga	                            Application.manga_list
+GET     /profile/edit                           Application.editprofile
+POST    /profile/edit                           Application.edit_me
+GET     /login                              	LoginRegister.userlogin
+GET     /get_logged_in                        	LoginRegister.get_logged_in
+GET     /register                           	LoginRegister.userregister
+POST    /addmanga								API.add_chapter
+POST    /checkapikey							API.check_apikey
+POST    /getchapterlist							Application.get_chapter_list
+POST    /setpost								Application.set_post
+POST    /getpost/{id}							Application.get_post
+GET     /getpost/{id}							Application.get_post
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

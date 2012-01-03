@@ -1,0 +1,63 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div style="clear:both"></div>
+
+<style type="text/css">
+	.logs{
+		background-color:rgba(255,255,255,0.6);
+		border-bottom:1px solid #ddd;
+	}
+
+	.GENERAL{
+		background:#8EDAFF;
+
+	}
+
+	.ERROR{
+		background:#FA2044;
+	}
+
+	.UNEXPECTED{
+		background:#FAD620;
+		
+	}
+
+	.WIN{
+		background:#B1FA20;
+	}
+</style>
+	
+<div class="container_shape">
+	<div class="c-ap"><h1>Logs</h1></div>
+		
+			<div style="clear:both"></div>
+				#{list items:logs, as:'log'}
+					<div class="logs">
+						<div class="c4-1p  ${log.log_type}">
+						${log.log_type}    
+						</div>
+						<div class="c4-3p">
+						${log.body}
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				#{/list}
+		
+		
+	<div style="clear:both"></div>
+</div>
+<div style="clear:both"></div>
+
+<script type="text/javascript" >
+
+
+
+
+
+
+
+
+
+
+</script>

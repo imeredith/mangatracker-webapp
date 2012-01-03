@@ -1,0 +1,8 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+validation.required=Required, nub stick!
+validation.minlength=5 characters min
+validation.unique=Already exists
+validation.nomatch=Passwords do not match.
+validation.confirmpassword=You must confirm your password to change it.
